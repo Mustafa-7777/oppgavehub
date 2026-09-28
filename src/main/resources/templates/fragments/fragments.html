@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="no" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<header th:fragment="navbar">
+    <h1>OppgaveHub</h1>
+
+    <nav>
+        <a th:href="@{/}">Hjem</a>
+        <a th:href="@{/oppgaver}">Oppgaver</a>
+        <a th:href="@{/om}">Om oss</a>
+    </nav>
+</header>
+
+<footer th:fragment="footer">
+    <p>&copy; 2026 OppgaveHub</p>
+</footer>
+
+</body>
+</html>

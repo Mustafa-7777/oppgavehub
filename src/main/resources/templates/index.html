@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OppgaveHub - Hjem</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+<header th:replace="~{fragments/fragments :: navbar}"></header>
+
+<main class="container">
+
+    <h2>Velkommen til OppgaveHub!</h2>
+
+    <p>Her er dine oppgaver:</p>
+
+    <section class="oppgaver">
+
+        <article class="oppgave-card">
+            <h3>Spring Boot oppgave</h3>
+            <p>Lage en webapplikasjon med Spring Boot</p>
+            <p>⏳ Ikke ferdig</p>
+        </article>
+
+        <article class="oppgave-card">
+            <h3>Kotlin oppgave</h3>
+            <p>Øve på Kotlin og objektorientert programmering</p>
+            <p>✅ Ferdig</p>
+        </article>
+
+        <article class="oppgave-card">
+            <h3>Database oppgave</h3>
+            <p>Jobbe med H2 database</p>
+            <p>⏳ Ikke ferdig</p>
+        </article>
+
+    </section>
+
+</main>
+
+<footer th:replace="~{fragments/fragments :: footer}"></footer>
+
+</body>
+</html>

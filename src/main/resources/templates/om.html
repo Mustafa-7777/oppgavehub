@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Om oss - OppgaveHub</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+<header th:replace="~{fragments/fragments :: navbar}"></header>
+
+<main class="container">
+
+    <h2>Om OppgaveHub</h2>
+
+    <p>
+        OppgaveHub er en enkel webapplikasjon laget med Spring Boot og Kotlin.
+    </p>
+
+    <p>
+        Her kan man holde oversikt over forskjellige oppgaver
+        og se hvilke oppgaver som er ferdige.
+    </p>
+
+</main>
+
+<footer th:replace="~{fragments/fragments :: footer}"></footer>
+
+</body>
+</html>

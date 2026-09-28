@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="no" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OppgaveHub - Oppgaver</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+
+<header th:replace="~{fragments/fragments :: navbar}"></header>
+
+<main class="container">
+
+    <h2>Mine oppgaver</h2>
+
+    <p>Her finner du alle oppgavene dine:</p>
+
+    <section class="form-section">
+
+        <h2>Legg til ny oppgave</h2>
+
+        <form th:action="@{/oppgaver}" method="post">
+
+            <label for="tittel">Tittel:</label>
+
+            <input type="text"
+                   id="tittel"
+                   name="tittel"
+                   required>
+
+            <label for="beskrivelse">Beskrivelse:</label>
+
+            <textarea id="beskrivelse"
+                      name="beskrivelse"
+                      required></textarea>
+
+            <button type="submit">
+                Legg til oppgave
+            </button>
+
+        </form>
+
+    </section>
+
+    <section class="oppgaver">
+
+        <article class="oppgave-card"
+                 th:each="oppgave : ${oppgaver}">
+
+            <h3 th:text="${oppgave.tittel}">
+                Oppgave tittel
+            </h3>
+
+            <p th:text="${oppgave.beskrivelse}">
+                Oppgave beskrivelse
+            </p>
+
+            <p>
+                Bruker:
+                <span th:text="${oppgave.navn}">
+                    Navn
+                </span>
+            </p>
+
+            <p>
+                E-post:
+                <span th:text="${oppgave.epost}">
+                    E-post
+                </span>
+            </p>
+
+            <p th:if="${oppgave.ferdig}">
+                ✅ Ferdig
+            </p>
+
+            <p th:unless="${oppgave.ferdig}">
+                ⏳ Ikke ferdig
+            </p>
+
+        </article>
+
+    </section>
+
+</main>
+
+<footer th:replace="~{fragments/fragments :: footer}"></footer>
+
+</body>
+</html>
